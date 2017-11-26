@@ -120,9 +120,12 @@ void AnTiCheatThread()
 	oldVT_ModelRender = *(DWORD**)ModelRender;
 	PrintMessage("AntiCheat Has Been Install: \n VPanel: %d \n ModelRender: %d \n",(int)oldVT_VPanel,(int)oldVT_ModelRender);
 	//一个小伎俩 @5EWIN
+	//D3D的窗口
 	Hide_Module(GetModuleHandleA("d3d9.dll"));
 	Hide_Module(GetModuleHandleA("d3dx9_43.dll"));
 	Hide_Module(GetModuleHandleA("shaderapidx9.dll"));
+	//SteamUI窗口
+	Hide_Module(GetModuleHandleA("gameoverlayrenderer.dll"));
 	static bool Cheating = false;
 	while (!Cheating)
 	{
